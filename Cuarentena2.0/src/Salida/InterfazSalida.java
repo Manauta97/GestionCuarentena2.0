@@ -1,0 +1,129 @@
+package Salida;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.JComboBox;
+import javax.swing.JButton;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+public class InterfazSalida extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField textFielddia;
+	private JTextField textFielhora;
+	private JTextField textFieldminutos;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					InterfazSalida frame = new InterfazSalida();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public InterfazSalida() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 428, 664);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblfoto = new JLabel("");
+		lblfoto.setBounds(50, 11, 94, 87);
+		contentPane.add(lblfoto);
+		
+		JLabel lbldni = new JLabel("Nombre - Dni");
+		lbldni.setBounds(154, 43, 94, 14);
+		contentPane.add(lbldni);
+		
+		JLabel lbldnimostrar = new JLabel("");
+		lbldnimostrar.setBounds(154, 58, 152, 14);
+		contentPane.add(lbldnimostrar);
+		
+		JLabel lblsalidas = new JLabel("Salidas Realizadas:");
+		lblsalidas.setBounds(33, 123, 111, 14);
+		contentPane.add(lblsalidas);
+		
+		JTextArea textAreasalidas = new JTextArea();
+		textAreasalidas.setEditable(false);
+		textAreasalidas.setBounds(33, 148, 331, 81);
+		contentPane.add(textAreasalidas);
+		
+		JLabel lbldia = new JLabel("Dia Salida");
+		lbldia.setBounds(70, 262, 88, 14);
+		contentPane.add(lbldia);
+		
+		JLabel lblhora = new JLabel("Hora Salida");
+		lblhora.setBounds(247, 262, 73, 14);
+		contentPane.add(lblhora);
+		
+		textFielddia = new JTextField();
+		textFielddia.setBounds(48, 287, 96, 20);
+		contentPane.add(textFielddia);
+		textFielddia.setColumns(10);
+		
+		textFielhora = new JTextField();
+		textFielhora.setBounds(210, 287, 56, 20);
+		contentPane.add(textFielhora);
+		textFielhora.setColumns(10);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(233, 364, 131, 22);
+		contentPane.add(comboBox);
+		
+		JLabel lblmotivos = new JLabel("Motivos");
+		lblmotivos.setBounds(283, 339, 48, 14);
+		contentPane.add(lblmotivos);
+		
+		JTextArea textAreaotros = new JTextArea();
+		textAreaotros.setBounds(33, 432, 331, 87);
+		contentPane.add(textAreaotros);
+		
+		JLabel lblotros = new JLabel("Otros:");
+		lblotros.setBounds(33, 409, 48, 14);
+		contentPane.add(lblotros);
+		
+		JButton btnvolver = new JButton("Volver");
+		btnvolver.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		btnvolver.setBounds(21, 572, 89, 23);
+		contentPane.add(btnvolver);
+		
+		JButton btnreservar = new JButton("Reservar");
+		btnreservar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		btnreservar.setBounds(293, 572, 89, 23);
+		contentPane.add(btnreservar);
+		
+		textFieldminutos = new JTextField();
+		textFieldminutos.setBounds(289, 287, 63, 20);
+		contentPane.add(textFieldminutos);
+		textFieldminutos.setColumns(10);
+	}
+}

@@ -10,20 +10,31 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 import agendaDinamica.Contacto;
-
+/**
+ * 
+ * @author a112
+ * @version 0.1.0
+ *
+ */
 public class IOdatos {
 	public static final String dir="./datos";
 	public static final String dirpol="./datos/personas.dat";
 	public static final String dirsal="./datos/salida.dat";
 
-	
+	/**
+	 * crea directorio para los ficheros que se van a usar
+	 * 
+	 */
 	private static void mkdirectorio() {
 		File f=new File(dir);
 		if (!f.exists()) {
 			f.mkdir();
 		}
 	}
-	
+	/**
+	 * @param vPers
+	 * guarda vector de persona
+	 */
 	public static void guardarPers(Persona vPers[]) {
 		mkdirectorio();
 		File f=new File(dirpol);
@@ -58,6 +69,10 @@ public class IOdatos {
 		}
 		
 	}
+	/**
+	 * @param vSal
+	 * guarda vectro de salida
+	 */
 	public static void guardarSal(Salida vSal[]) {
 		mkdirectorio();
 		
@@ -95,7 +110,9 @@ public class IOdatos {
 		
 	}
 	
-
+/**
+ * devuelve vector de persona tras cargar de disco
+ */
 	
 	public static Persona[] cargarpersona() {
 		mkdirectorio();
@@ -140,7 +157,9 @@ public class IOdatos {
 
 		return vContact;
 	}
-	
+	/**
+	 * devuelve vector de salida tras cargar de disco
+	 */	
 	public static Salida[] cargarSalida() {
 		mkdirectorio();
 		ArrayList<Salida> vContact = new ArrayList<Salida>();

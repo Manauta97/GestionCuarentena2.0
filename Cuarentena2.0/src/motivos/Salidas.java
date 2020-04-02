@@ -55,4 +55,13 @@ public class Salidas {
 	public void setDni(String dni) {
 		this.dni = dni;
 	}
+
+	@Override
+	public String toString() {
+		return "motivos: " + motivos + " fecha: " + fecha + " hora: " + hora + " minutos: " + minutos + ", dni: "+ dni;
+				
+	}
+	
+	
+	
 }

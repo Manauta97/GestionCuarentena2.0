@@ -14,7 +14,7 @@ import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class InterfazSalida extends JFrame {
+public class InterfazSalid extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textFielddia;
@@ -28,7 +28,7 @@ public class InterfazSalida extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					InterfazSalida frame = new InterfazSalida();
+					InterfazSalid frame = new InterfazSalid();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -40,7 +40,7 @@ public class InterfazSalida extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public InterfazSalida() {
+	public InterfazSalid() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 428, 664);
 		contentPane = new JPanel();
@@ -126,4 +126,5 @@ public class InterfazSalida extends JFrame {
 		contentPane.add(textFieldminutos);
 		textFieldminutos.setColumns(10);
 	}
+
 }

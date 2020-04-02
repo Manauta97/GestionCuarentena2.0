@@ -14,6 +14,8 @@ import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JCheckBox;
 import javax.swing.JButton;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Registro extends JFrame {
 
@@ -93,11 +95,20 @@ public class Registro extends JFrame {
 		contentPane.add(chckbxNewCheckBox);
 		
 		JButton btnVolver = new JButton("Volver");
+		btnVolver.addMouseListener(new BtnVolverMouseListener());
 		btnVolver.setBounds(67, 351, 89, 23);
 		contentPane.add(btnVolver);
 		
 		JButton btnNewButton = new JButton("Aceptar Registro");
 		btnNewButton.setBounds(177, 351, 147, 23);
 		contentPane.add(btnNewButton);
+	}
+	private class BtnVolverMouseListener extends MouseAdapter {
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			Login log = new Login();
+			log.setVisible(true);
+			dispose();
+		}
 	}
 }

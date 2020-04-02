@@ -11,12 +11,14 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Login extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField txtdni;
 
 	/**
 	 * Launch the application.
@@ -56,6 +58,7 @@ public class Login extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Registrarse");
+		btnNewButton_1.addMouseListener(new BtnNewButton_1MouseListener());
 		btnNewButton_1.setBounds(190, 350, 89, 23);
 		contentPane.add(btnNewButton_1);
 		
@@ -76,10 +79,20 @@ public class Login extends JFrame {
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(144, 221, 135, 20);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		txtdni = new JTextField();
+		txtdni.setBounds(144, 221, 135, 20);
+		contentPane.add(txtdni);
+		txtdni.setColumns(10);
 	}
 
+	private class BtnNewButton_1MouseListener extends MouseAdapter {
+		@Override
+		public void mouseClicked(MouseEvent arg0) {
+			Registro regs = new Registro();
+			regs.setVisible(true);
+			dispose();
+			//InterfazSalid(txtdni.getText());
+			
+		}
+	}
 }

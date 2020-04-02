@@ -6,13 +6,19 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class InterfazSalid extends JFrame {
 
@@ -20,7 +26,9 @@ public class InterfazSalid extends JFrame {
 	private JTextField textFielddia;
 	private JTextField textFielhora;
 	private JTextField textFieldminutos;
-
+	private String dni;
+	//private ArrayList<Salida> vSalida;
+	private DefaultComboBoxModel modeloComboBox = new DefaultComboBoxModel();
 	/**
 	 * Launch the application.
 	 */
@@ -28,7 +36,8 @@ public class InterfazSalid extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					InterfazSalid frame = new InterfazSalid();
+					String dni=null;
+					InterfazSalid frame = new InterfazSalid(dni);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -40,7 +49,8 @@ public class InterfazSalid extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public InterfazSalid() {
+	public InterfazSalid(String dni) {
+		dni=this.dni;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 428, 664);
 		contentPane = new JPanel();
@@ -88,11 +98,16 @@ public class InterfazSalid extends JFrame {
 		textFielhora.setColumns(10);
 		
 		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(233, 364, 131, 22);
+
+
+		
+		modeloComboBox= new DefaultComboBoxModel();
+		comboBox.setModel(modeloComboBox);
+		comboBox.setBounds(210, 364, 154, 22);
 		contentPane.add(comboBox);
 		
 		JLabel lblmotivos = new JLabel("Motivos");
-		lblmotivos.setBounds(283, 339, 48, 14);
+		lblmotivos.setBounds(264, 339, 48, 14);
 		contentPane.add(lblmotivos);
 		
 		JTextArea textAreaotros = new JTextArea();
@@ -103,6 +118,8 @@ public class InterfazSalid extends JFrame {
 		lblotros.setBounds(33, 409, 48, 14);
 		contentPane.add(lblotros);
 		
+		
+		
 		JButton btnvolver = new JButton("Volver");
 		btnvolver.addMouseListener(new MouseAdapter() {
 			@Override
@@ -112,19 +129,67 @@ public class InterfazSalid extends JFrame {
 		btnvolver.setBounds(21, 572, 89, 23);
 		contentPane.add(btnvolver);
 		
-		JButton btnreservar = new JButton("Reservar");
-		btnreservar.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-			}
-		});
-		btnreservar.setBounds(293, 572, 89, 23);
-		contentPane.add(btnreservar);
 		
 		textFieldminutos = new JTextField();
 		textFieldminutos.setBounds(289, 287, 63, 20);
 		contentPane.add(textFieldminutos);
 		textFieldminutos.setColumns(10);
+		
+		lbldnimostrar.setText(dni);
+		modeloComboBox.addElement("Sacar a pasear al perro");
+		modeloComboBox.addElement("Ir al medico de Urgencias");
+		modeloComboBox.addElement("Ir a hacer la compra");
+		modeloComboBox.addElement("Otros");
+		textAreaotros.setVisible(false);
+		
+		
+		
+		comboBox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(modeloComboBox.getSelectedItem().equals("Otros")) {
+					textAreaotros.setVisible(true);
+				}else {
+					textAreaotros.setVisible(false);
+				}
+			}
+		});
+		
+		//comboBox.addMouseListener(new MouseAdapter() {
+			
+		//	public void mouseClicked(MouseEvent e) {
+				
+		//		if(modeloComboBox.getSelectedItem().equals("Otros")) {
+		//			textAreaotros.setVisible(true);
+		//		}else {
+		//			textAreaotros.setVisible(false);
+		//		}
+		//	}
+
+	//	});
+		
+		//vSalida=Iodatos.cargarsalida;
+		
+		//String salidas="";
+		//for (Salida s : vSalida) {
+		//	if(s.getdni.equalsIgnoreCase(dni)) {
+		//		salidas+=s.tostring() + "\n";
+		//	}
+		//}
+//		textAreasalidas.setText(salidas);
+		
+		
+		JButton btnreservar = new JButton("Reservar");
+		btnreservar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				
+			}
+		});
+		btnreservar.setBounds(293, 572, 89, 23);
+		contentPane.add(btnreservar);
+	
 	}
+
 
 }

@@ -141,15 +141,17 @@ public class InterfazSalid extends JFrame {
 		modeloComboBox.addElement("Ir a hacer la compra");
 		modeloComboBox.addElement("Otros");
 		textAreaotros.setVisible(false);
-		
+		lblotros.setVisible(false);
 		
 		
 		comboBox.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(modeloComboBox.getSelectedItem().equals("Otros")) {
 					textAreaotros.setVisible(true);
+					lblotros.setVisible(true);
 				}else {
 					textAreaotros.setVisible(false);
+					lblotros.setVisible(false);
 				}
 			}
 		});

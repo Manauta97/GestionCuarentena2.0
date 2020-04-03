@@ -6,7 +6,12 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import iodatos.Persona;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
@@ -24,6 +29,8 @@ import java.awt.event.MouseEvent;
  * @version 0.1.0
  *
  */
+import java.util.ArrayList;
+import java.util.regex.Pattern;
 public class Policia extends JFrame {
 
 	private JPanel contentPane;
@@ -45,6 +52,8 @@ public class Policia extends JFrame {
 	private JCheckBox chckbxrevisado;
 	private JToggleButton tglbtn_mostrartodo;
 	private JButton btn_revisar;
+	private ArrayList<Persona> vpers;
+	private ArrayList<Salida> vsal;
 
 	/**
 	 * Launch the application,
@@ -67,6 +76,8 @@ public class Policia extends JFrame {
 	 * Create the frame.
 	 */
 	public Policia() {
+		vpers= IOdatos.cargarpersona;
+		vsal= IOdatos.cargarSalida;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 461, 713);
 		contentPane = new JPanel();
@@ -158,39 +169,137 @@ public class Policia extends JFrame {
 		btn_revisar.setBounds(175, 617, 89, 23);
 		contentPane.add(btn_revisar);
 	}
+	
+	private void actualizarModelo() {
+		cbList.removeAllElements();
+		
+		String dni = "";
+		String hora = "";
+		String minutos = "";
+		String dia = "";
+
+		dni = textField_dni.getText();
+		hora = textField_hora.getText();
+		minutos = textField_minutos.getText();
+		dia = textField_dia.getText();
+		
+		for (Salida s : vSalidas) {
+			if (s.getDNI.equalsIgnorecase(dni)) {
+				cbList.addElement(s);
+			}
+		}
+		
+		
+		
+		
+		
+
+	}
+
 	private class TextField_dniKeyListener extends KeyAdapter {
 		@Override
 		public void keyReleased(KeyEvent e) {
+			String pat = "dddddddd[A-Z]";
+			String pat2 = "[A-Z]ddddddd[A-Z]";
+			String dni = textField_dni.getText();
+
+			if (Pattern.matches(pat, dni) || Pattern.matches(pat2, dni)) {
+				actualizarModelo();
+			}
+
 		}
 	}
+
 	private class TextField_horaKeyListener extends KeyAdapter {
 		@Override
 		public void keyReleased(KeyEvent e) {
+			String pat = "dd";
+			
+			String hora = textField_hora.getText();
+			int comprobar=0;
+			try {
+				comprobar=Integer.parseInt(hora);
+			} catch (Exception e2) {
+				JOptionPane.showMessageDialog(null, "introduce un numero", "error", 0);
+			}
+
+			if (Pattern.matches(pat, hora) && (comprobar>=0 && comprobar<=23)) {
+				actualizarModelo();
+			}
+			
 		}
 	}
+
 	private class TextField_minutosKeyListener extends KeyAdapter {
 		@Override
 		public void keyReleased(KeyEvent e) {
+String pat = "dd";
+			
+			String minuto = textField_hora.getText();
+			int comprobar=0;
+			try {
+				comprobar=Integer.parseInt(minuto);
+			} catch (Exception e2) {
+				JOptionPane.showMessageDialog(null, "introduce un numero", "error", 0);
+			}
+
+			if (Pattern.matches(pat, minuto) && (comprobar>=0 && comprobar<=23)) {
+				actualizarModelo();
+			}
 		}
 	}
+
 	private class ComboBox_personasMouseListener extends MouseAdapter {
 		@Override
 		public void mouseClicked(MouseEvent e) {
+			Salida s=cbList.getSelectedItem();
+			
+			textArea_infoCiudadano.setText(s.toString);
+			
 		}
 	}
+
 	private class Btn_atrasMouseListener extends MouseAdapter {
 		@Override
 		public void mouseClicked(MouseEvent e) {
+			Login l=new Login();
+			l.setvisible(true);
+			dispose;
 		}
 	}
+
 	private class Btn_revisarMouseListener extends MouseAdapter {
 		@Override
 		public void mouseClicked(MouseEvent e) {
+			Salida s=cbList.getSelectedItem();
+			s.setRevisado(true);
 		}
 	}
+
 	private class Btn_multarMouseListener extends MouseAdapter {
 		@Override
-		public void mouseClicked(MouseEvent e) {	
+		public void mouseClicked(MouseEvent e) {
+			Salida s=cbList.getSelectedItem();
+			s.setRevisado(true);
+			s.setMultado(true);
+		}
+	}
+	private class TextField_diaKeyListener extends KeyAdapter {
+		@Override
+		public void keyReleased(KeyEvent e) {
+String pat = "dd";
+			
+			String dia = textField_hora.getText();
+			int comprobar=0;
+			try {
+				comprobar=Integer.parseInt(dia);
+			} catch (Exception e2) {
+				JOptionPane.showMessageDialog(null, "introduce un numero", "error", 0);
+			}
+
+			if (Pattern.matches(pat, dia) && (comprobar>=0 && comprobar<=23)) {
+				actualizarModelo();
+			}
 		}
 	}
 	

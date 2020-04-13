@@ -157,18 +157,6 @@ public class InterfazSalid extends JFrame {
 			}
 		});
 		
-		//comboBox.addMouseListener(new MouseAdapter() {
-			
-		//	public void mouseClicked(MouseEvent e) {
-				
-		//		if(modeloComboBox.getSelectedItem().equals("Otros")) {
-		//			textAreaotros.setVisible(true);
-		//		}else {
-		//			textAreaotros.setVisible(false);
-		//		}
-		//	}
-
-	//	});
 		
 		//vSalida=Iodatos.cargarsalida;
 		

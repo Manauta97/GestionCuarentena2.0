@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
@@ -184,6 +185,26 @@ public class InterfazSalid extends JFrame {
 		btnreservar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				
+				if(comboBox.getSelectedItem().equals("Otros")) {
+					if(textFielddia.getText().equalsIgnoreCase("") || textFielhora.getText().equalsIgnoreCase("") ||textFielddia.getText().equalsIgnoreCase("") || textFieldminutos.getText().equalsIgnoreCase("") || textAreaotros.getText().equalsIgnoreCase("")) {
+						JOptionPane.showMessageDialog(null, "No pueden haber datos en blanco", "Mensaje", 2);
+					}
+				}else {
+					if(textFielddia.getText().equalsIgnoreCase("") || textFielddia.getText().equalsIgnoreCase("") || textFielhora.getText().equalsIgnoreCase("") || textFieldminutos.getText().equalsIgnoreCase("") || comboBox.getSelectedItem().equals("")) {
+						JOptionPane.showMessageDialog(null, "No pueden haber datos en blanco", "Mensaje", 2);
+					}
+				}
+				
+				//if(comboBox.getSelectedItem().equals("Otros")) {
+					//Salida s = new Salida(textAreaotros.getText(),textFielddia.getText(),textFielhora.getText(),textFieldminutos.getText(),dni)
+					//JOptionPane.showMessageDialog(null, "Se Ha Guardado Con Exito", "Guardado Completado", 1);
+				//	vSalida.add(s)
+				//}else{
+				// Salida c = new Salida(comboBox.getSelectedItem(),textFielddia.getText(),textFielhora.getText(),textFieldminutos.getText(),dni)
+				//JOptionPane.showMessageDialog(null, "Se Ha Guardado Con Exito", "Guardado Completado", 1);
+			//}
+				
 				
 				
 			}

@@ -3,8 +3,8 @@ package Individuos;
 import java.io.Serializable;
 /*
   Esta clase define los atributos de persona
-  @autor Damian, Raúl y Ivan
-  @version 1.0
+  @autor Raúl 
+  @version 0.1
   
  */
 

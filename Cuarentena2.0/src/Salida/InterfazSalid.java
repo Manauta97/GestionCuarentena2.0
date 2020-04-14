@@ -125,7 +125,10 @@ public class InterfazSalid extends JFrame {
 		btnvolver.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-			}
+			//	Login l = new Login();
+			//	l.setVisible(true);
+			//	dispose();
+				}
 		});
 		btnvolver.setBounds(21, 572, 89, 23);
 		contentPane.add(btnvolver);

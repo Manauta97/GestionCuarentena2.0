@@ -1,5 +1,8 @@
 package polesia;
-
+/**
+ * @author a112
+ * @version 0.1.3
+ */
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -169,7 +172,9 @@ public class Policia extends JFrame {
 		btn_revisar.setBounds(175, 617, 89, 23);
 		contentPane.add(btn_revisar);
 	}
-	
+	/**
+	 * actualiza el modelo
+	 */
 	private void actualizarModelo() {
 		cbList.removeAllElements();
 		

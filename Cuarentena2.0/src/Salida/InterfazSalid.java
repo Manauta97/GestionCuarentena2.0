@@ -161,7 +161,7 @@ public class InterfazSalid extends JFrame {
 		});
 		
 		
-		//vSalida=Iodatos.cargarsalida;
+		//vSalida=Iodatos.cargarSalida;
 		
 		//String salidas="";
 		//for (Salida s : vSalida) {
@@ -191,9 +191,11 @@ public class InterfazSalid extends JFrame {
 					//Salida s = new Salida(textAreaotros.getText(),textFielddia.getText(),textFielhora.getText(),textFieldminutos.getText(),dni)
 					//JOptionPane.showMessageDialog(null, "Se Ha Guardado Con Exito", "Guardado Completado", 1);
 				//	vSalida.add(s)
+				// Iodatos.guardarSal(vSalida);
 				//}else{
 				// Salida c = new Salida(comboBox.getSelectedItem(),textFielddia.getText(),textFielhora.getText(),textFieldminutos.getText(),dni)
 				//JOptionPane.showMessageDialog(null, "Se Ha Guardado Con Exito", "Guardado Completado", 1);
+				//Iodatos.guardarSal(vSalida);
 			//}
 				
 				

@@ -1,5 +1,12 @@
 package Individuos;
 
+/*
+Esta clase define los atributos de Ciudadano y hereda los de Persona
+@autor Damian, Raúl y Ivan
+@version 1.0
+
+*/
+
 public final class Ciudadano extends Persona{
 	private String nCiudadano;
 

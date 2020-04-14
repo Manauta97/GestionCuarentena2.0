@@ -1,5 +1,12 @@
 package Individuos;
 
+/*
+Esta clase define los atributos de Policia y hereda los de Persona
+@autor Damian, Raúl y Ivan
+@version 1.0
+
+*/
+
 public final class Policia extends Persona{
 	private String nPlaca;
 

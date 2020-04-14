@@ -1,5 +1,11 @@
 package motivos;
 
+/*
+Esta clase define los atributos de Salidas
+@autor Damian, Raúl y Ivan
+@version 1.0
+*/
+
 public class Salidas {
 	private String motivos;
 	private String fecha;

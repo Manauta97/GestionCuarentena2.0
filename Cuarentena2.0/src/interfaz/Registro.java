@@ -17,6 +17,12 @@ import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+/*
+ Creacion de la interfaz registro
+ @autor Raúl
+ @version 0.1
+ */
+
 public class Registro extends JFrame {
 
 	private JPanel contentPane;
@@ -103,6 +109,9 @@ public class Registro extends JFrame {
 		btnNewButton.setBounds(177, 351, 147, 23);
 		contentPane.add(btnNewButton);
 	}
+	/*
+	 	Al clicar el boton volver cierra la ventana registro y vuelve a la ventana login. 
+	 */
 	private class BtnVolverMouseListener extends MouseAdapter {
 		@Override
 		public void mouseClicked(MouseEvent e) {

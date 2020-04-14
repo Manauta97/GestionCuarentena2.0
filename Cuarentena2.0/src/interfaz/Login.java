@@ -14,6 +14,11 @@ import javax.swing.JTextField;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+/*
+Creacion de la interfaz Login
+@autor Raúl
+@version 0.1
+*/
 public class Login extends JFrame {
 
 	private JPanel contentPane;
@@ -85,6 +90,9 @@ public class Login extends JFrame {
 		txtdni.setColumns(10);
 	}
 
+	/*
+	 El bonton registrar te manda a la ventana de registrar y cierra la pestaña Login 
+	 */
 	private class BtnNewButton_1MouseListener extends MouseAdapter {
 		@Override
 		public void mouseClicked(MouseEvent arg0) {

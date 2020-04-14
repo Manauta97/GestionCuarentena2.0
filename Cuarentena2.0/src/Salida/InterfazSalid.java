@@ -1,5 +1,9 @@
 package Salida;
-
+/*
+ * @author ivan
+ * @version 0.1
+ * interfaz que muestra salidas de un usuario y poder guardar otras
+ */
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -120,7 +124,7 @@ public class InterfazSalid extends JFrame {
 		contentPane.add(lblotros);
 		
 		
-		
+		//boton que vuelve a la interfaz registro
 		JButton btnvolver = new JButton("Volver");
 		btnvolver.addMouseListener(new MouseAdapter() {
 			@Override
@@ -147,7 +151,7 @@ public class InterfazSalid extends JFrame {
 		textAreaotros.setVisible(false);
 		lblotros.setVisible(false);
 		
-		
+		//hace visible el textarea otros
 		comboBox.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(modeloComboBox.getSelectedItem().equals("Otros")) {
@@ -171,7 +175,7 @@ public class InterfazSalid extends JFrame {
 		//}
 //		textAreasalidas.setText(salidas);
 		
-		
+		// boton que guarda salida
 		JButton btnreservar = new JButton("Reservar");
 		btnreservar.addMouseListener(new MouseAdapter() {
 			@Override

@@ -1,7 +1,7 @@
 package Salida;
 /*
  * @author ivan
- * @version 0.1
+ * @version 0.1.0
  * interfaz que muestra salidas de un usuario y poder guardar otras
  */
 import java.awt.BorderLayout;
